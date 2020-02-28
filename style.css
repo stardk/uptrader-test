@@ -1,0 +1,306 @@
+body, div, p {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'PFDinTextPro';
+    src: url(fonts/PFDinTextProLight.ttf);
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'PFDinTextPro';
+    src: url(fonts/PFDinTextProMedium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'PFDinTextPro';
+    src: url(fonts/PFDinTextProRegular.ttf);
+    font-weight: normal;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+body {
+    font-family: 'PFDinTextPro';
+    font-weight: 300;
+    font-size: 1.2vw;
+}
+body * {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100vh;
+}
+.choosing {
+    width: 100%;
+    background: url(images/bg-1.png) center;
+    background-size: cover;
+    transition: all .8s ease;
+}
+.choosing__wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.choosing__title {
+    text-align: center;
+    font-size: 3.2vw;
+    font-weight: 300;
+    color: #171717;
+    margin-bottom: 80px;
+}
+.choosing__row {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 18%;
+}
+@media screen and (max-width: 1150px) {
+    .choosing__row {
+        padding: 0 10%;
+    }
+}
+.choosing__row .info {
+    display: none;
+}
+.circle-choose {
+    width: 36vh;
+    height: 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+@media screen and (min-width: 920px) {
+    .circle-choose-active .circle-choose__inner {
+        border: 1px solid #00b0a2;
+    }
+}
+.circle-choose__inner {
+    width: 95%;
+    height: 95%;
+    border: solid 1px transparent;
+    border-radius: 50%;
+    display: block;
+}
+.circle-choose__content {
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (min-width: 920px) {
+    .circle-choose:hover .circle-choose__inner {
+        border: 1px solid #00b0a2;
+    }
+}
+.circle-choose__icon {
+    height: 70px;
+}
+.circle-choose__text {
+    margin-top: 20px;
+    font-size: 1.4vw;
+    color: #242424;
+    text-align: center;
+}
+.circle-choose__arrow {
+    display: none;
+}
+.description {
+    min-height: 100vh;
+    width: 100%;
+    background: url(images/bg-2.png) center;
+    background-size: cover;
+    animation: fadeIn 0.5s ease 0.5s 1 both paused;
+}
+.description__tabs {
+    height: 12vh;
+    border-bottom: 1px solid #b5b5b5;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 18%;
+    animation: fadeIn 1s linear 0.7s 1 both paused;
+}
+@media screen and (max-width: 1150px) {
+    .description__tabs {
+        padding: 0 10%;
+    }
+}
+.description__column {
+    cursor: pointer;
+    height: 100%;
+    flex: 0 0 36vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description__column-active {
+    border-bottom: 2px solid #009e82;
+}
+.description__column-active .description__column-text {
+    font-weight: normal;
+    color: #009e82;
+}
+.description__column:hover {
+    border-bottom: 2px solid #009e82;
+}
+.description__column:hover .description__column-text {
+    font-weight: normal;
+    color: #009e82;
+}
+.description__column-text {
+    font-size: 1.4vw;
+    color: rgba(46, 46, 46, 0.8);
+}
+.info {
+    padding: 65px 18% 0 18%;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease 1s 1 both paused;
+}
+.info__row {
+    width: 72vh;
+}
+.info__text {
+    color: #1c1c1c;
+}
+.list {
+    margin: 40px 0;
+}
+.list__title {
+    font-size: 1.6vw;
+    margin-bottom: 30px;
+}
+.item-info {
+    display: flex;
+    align-items: center;
+}
+.item-info:not(:last-child) {
+    margin-bottom: 10px;
+}
+.item-info__number {
+    font-size: 2.1vw;
+    color: #00b596;
+    margin-right: 15px;
+}
+.item-info__text {
+    color: #1d1d1d;
+}
+.info__button {
+    display: inline-block;
+    max-width: 150px;
+    padding: 15px 25px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #009e82;
+    border: none;
+    color: #feffff
+}
+.info__button:hover {
+    background-color: #006654;
+}
+
+@media screen and (max-width: 920px) {
+    body {
+        font-size: 18px;
+    }
+    .choosing-show {
+        transition: all .8s ease;
+        background: #f3f2da;
+    }
+    .choosing__wrapper {
+        padding: 44px 0px;
+        justify-content: flex-start;
+    }
+    .choosing__title {
+        font-size: 36px;
+        margin-bottom: 24px;
+    }
+    .choosing__row {
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0px 5vw;
+    }
+    .circle-choose {
+        width: 100%;
+        height: 11vh;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 0;
+    }
+    .circle-choose:not(:last-child) {
+        margin-bottom: 13px;
+    }
+    .circle-choose__inner {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 0;
+    }
+    .circle-choose__content {
+        height: 100%;
+        padding: 0px 20px;
+        flex-direction: row;
+    }
+    .circle-choose__icon {
+        height: 30px;
+    }
+    .circle-choose__text {
+        margin-top: 0;
+        font-size: 19px;
+    }
+    .circle-choose__arrow {
+        display: inline-block;
+        width: 19px;
+        transition: all .5s ease;
+        transform: rotate(0deg);
+    }
+    .circle-choose__arrow-active {
+        transform: rotate(180deg);
+    }
+    .description {
+        display: none;
+    }
+    .info {
+        padding: 0px;
+        animation: none;
+        display: none;
+    }
+    .info__row {
+        width: 100%;
+    }
+    .list {
+        margin-top: 20px;
+    }
+    .list__title {
+        font-size: 24px;
+    }
+    .item-info__number {
+        font-size: 32px;
+    }
+    .info__button {
+        margin: 0;
+    }
+    .choosing__row .info-show {
+        display: flex;
+    }
+    .info img {
+        margin: 25px -5vw;
+        width: calc(100% + 10vw);
+    }
+}
